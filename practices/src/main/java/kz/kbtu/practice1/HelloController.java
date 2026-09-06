@@ -5,8 +5,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HelloController {
+
+    private final AppProperties appProperties;
+
+    public HelloController(AppProperties appProperties) {
+        this.appProperties =  appProperties;
+    }
     @GetMapping("/hello")
     public String hello(){
-        return "Hello, Spring!";
+        return appProperties.getGreeting() + " (max users: " + appProperties.getMaxUsers() + ")";
     }
 }
