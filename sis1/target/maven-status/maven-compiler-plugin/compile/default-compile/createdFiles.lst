@@ -1,0 +1,10 @@
+com/nurassyl/sis1/service/TaskService.class
+com/nurassyl/sis1/dto/TaskResponse.class
+com/nurassyl/sis1/exception/GlobalExceptionHandler.class
+com/nurassyl/sis1/model/Task.class
+com/nurassyl/sis1/controller/TaskController.class
+com/nurassyl/sis1/dto/TaskUpdateRequest.class
+com/nurassyl/sis1/exception/ErrorResponse.class
+com/nurassyl/sis1/dto/TaskCreateRequest.class
+com/nurassyl/sis1/Sis1Application.class
+com/nurassyl/sis1/exception/TaskNotFoundException.class

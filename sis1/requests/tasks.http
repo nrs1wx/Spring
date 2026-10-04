@@ -1,0 +1,94 @@
+### SIS 1 - Task API HTTP collection
+### Start the app (dev profile), then run the requests from top to bottom.
+### Tasks are stored in memory: after a restart the first created task has id = 1 again.
+
+@baseUrl = http://localhost:8080
+@id = 1
+
+
+### ===================== SUCCESS =====================
+
+### 1. POST valid -> 201 Created
+POST {{baseUrl}}/api/tasks
+Content-Type: application/json
+
+{
+  "title": "Learn Spring Boot",
+  "description": "Finish SIS 1",
+  "priority": "HIGH"
+}
+
+### 2. GET all -> 200 OK
+GET {{baseUrl}}/api/tasks
+
+### 3. GET existing -> 200 OK
+GET {{baseUrl}}/api/tasks/{{id}}
+
+### 4. PUT valid -> 200 OK
+PUT {{baseUrl}}/api/tasks/{{id}}
+Content-Type: application/json
+
+{
+  "title": "Learn Spring Boot (updated)",
+  "description": "SIS 1 is almost done",
+  "priority": "MEDIUM",
+  "completed": true
+}
+
+
+### ===================== ERRORS =====================
+
+### 5. POST invalid (blank title, no priority) -> 400 Bad Request
+POST {{baseUrl}}/api/tasks
+Content-Type: application/json
+
+{
+  "title": "",
+  "description": "No title and no priority"
+}
+
+### 6. POST malformed JSON -> 400 Bad Request
+POST {{baseUrl}}/api/tasks
+Content-Type: application/json
+
+{
+  "title": "Broken json",
+
+### 7. PUT invalid -> 400 Bad Request
+PUT {{baseUrl}}/api/tasks/{{id}}
+Content-Type: application/json
+
+{
+  "title": "",
+  "priority": "",
+  "completed": false
+}
+
+### 8. GET missing -> 404 Not Found
+GET {{baseUrl}}/api/tasks/999
+
+### 9. GET invalid id (not a number) -> 400 Bad Request
+GET {{baseUrl}}/api/tasks/abc
+
+### 10. PUT missing -> 404 Not Found
+PUT {{baseUrl}}/api/tasks/999
+Content-Type: application/json
+
+{
+  "title": "Does not exist",
+  "description": "test",
+  "priority": "LOW",
+  "completed": false
+}
+
+### 11. DELETE missing -> 404 Not Found
+DELETE {{baseUrl}}/api/tasks/999add
+
+
+### ===================== DELETE =====================
+
+### 12. DELETE existing -> 204 No Content
+DELETE {{baseUrl}}/api/tasks/{{id}}
+
+### 13. GET deleted task -> 404 Not Found
+GET {{baseUrl}}/api/tasks/{{id}}

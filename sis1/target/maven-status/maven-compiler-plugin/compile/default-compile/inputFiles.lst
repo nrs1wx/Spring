@@ -1,0 +1,10 @@
+/home/nrsl/Spring/sis1/src/main/java/com/nurassyl/sis1/Sis1Application.java
+/home/nrsl/Spring/sis1/src/main/java/com/nurassyl/sis1/controller/TaskController.java
+/home/nrsl/Spring/sis1/src/main/java/com/nurassyl/sis1/dto/TaskCreateRequest.java
+/home/nrsl/Spring/sis1/src/main/java/com/nurassyl/sis1/dto/TaskResponse.java
+/home/nrsl/Spring/sis1/src/main/java/com/nurassyl/sis1/dto/TaskUpdateRequest.java
+/home/nrsl/Spring/sis1/src/main/java/com/nurassyl/sis1/exception/ErrorResponse.java
+/home/nrsl/Spring/sis1/src/main/java/com/nurassyl/sis1/exception/GlobalExceptionHandler.java
+/home/nrsl/Spring/sis1/src/main/java/com/nurassyl/sis1/exception/TaskNotFoundException.java
+/home/nrsl/Spring/sis1/src/main/java/com/nurassyl/sis1/model/Task.java
+/home/nrsl/Spring/sis1/src/main/java/com/nurassyl/sis1/service/TaskService.java
